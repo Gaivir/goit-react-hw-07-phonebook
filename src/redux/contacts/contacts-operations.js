@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 import {
     addContactRequest,
@@ -35,7 +36,7 @@ const formSubmitHandler = (name, number) => dispatch => {
     axios
         .post('/contacts', contact)
         .then(({ data }) =>
-            dispatch(addContactSuccess(data)))
+            dispatch(addContactSuccess(data)),)
         .catch(error => dispatch(addContactError(error)));
         
 };

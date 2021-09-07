@@ -4,6 +4,7 @@ import ContactList from './Components/ContactList/ContactList';
 import ContactForm from './Components/ContactForm/ContactForm';
 import Filter from './Components/Filter/Filter';
 import contactsOperations from '../src/redux/contacts/contacts-operations';
+import contactsSelectors from '../src/redux/contacts/contacts-selectors';
 
 
 class App extends Component {
@@ -32,7 +33,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  isLoadingContacts: state.todos.loading,
+  isLoadingContacts: contactsSelectors.getLoading(state),
 })
 
 const mapDispatchToProps = dispatch => ({
